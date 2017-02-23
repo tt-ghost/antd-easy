@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "lib", 
+      "style": true
+    }],
+    ["import", {
+      "libraryName": "react-router",
+      "libraryDirectory": "lib"
+    }]
+  ]
+}
