@@ -6,7 +6,7 @@ import FormItemInput from './components/FormItemInput';
 import FormItemSelect from './components/FormItemSelect';
 import FuzzySearch from './components/FuzzySearch';
 import FormItemRadio from './components/FormItemRadio';
-import FormItemCheckbox from './components/FormItemCheckbox';
+import FormItemCheckboxGroup from './components/FormItemCheckboxGroup';
 
 
 class Routers extends React.Component {
@@ -30,8 +30,8 @@ class Routers extends React.Component {
         <Route path='FormItemRadio' 
           getComponent={(location, callback)=>{require.ensure([], ()=>{callback(null, FormItemRadio);}, 'FormItemRadio');}} 
         />
-        <Route path='FormItemCheckbox' 
-          getComponent={(location, callback)=>{require.ensure([], ()=>{callback(null, FormItemCheckbox);}, 'FormItemCheckbox');}} 
+        <Route path='FormItemCheckboxGroup' 
+          getComponent={(location, callback)=>{require.ensure([], ()=>{callback(null, FormItemCheckboxGroup);}, 'FormItemCheckboxGroup');}} 
         />
     </Route>
 

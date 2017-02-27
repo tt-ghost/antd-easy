@@ -1,7 +1,7 @@
 import React from 'react';
 import Demo01 from './Demo01/Container.js';
 
-class FormItemCheckboxDemo extends React.Component {
+class FormItemCheckboxGroupDemo extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -13,5 +13,5 @@ class FormItemCheckboxDemo extends React.Component {
   }
 }
 
-export default FormItemCheckboxDemo;
+export default FormItemCheckboxGroupDemo;
 

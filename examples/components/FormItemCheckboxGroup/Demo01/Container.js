@@ -9,7 +9,7 @@ class Container extends React.Component {
 
   render(){
     return <div>
-      <HTML codepath='FormItemCheckbox/Demo01/index.js' mdpath='FormItemCheckbox/Demo01/README.md' >
+      <HTML codepath='FormItemCheckboxGroup/Demo01/index.js' mdpath='FormItemCheckboxGroup/Demo01/README.md' >
         <Demo01 />
       </HTML>
     </div>;

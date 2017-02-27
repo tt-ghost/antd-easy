@@ -4,7 +4,7 @@ import { Form, Checkbox } from 'antd';
 const FormItem = Form.Item;
 const CheckboxGroup = Checkbox.Group;
 
-class FormItemCheckbox extends React.Component {
+class FormItemCheckboxGroup extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -30,8 +30,8 @@ class FormItemCheckbox extends React.Component {
   }
 }
 
-FormItemCheckbox.contextTypes = {
+FormItemCheckboxGroup.contextTypes = {
   form: React.PropTypes.object.isRequired
 };
 
-export default FormItemCheckbox;
+export default FormItemCheckboxGroup;

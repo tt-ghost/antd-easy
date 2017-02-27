@@ -18,7 +18,10 @@ class FormItemInput extends React.Component {
       rules: [{required: formItemAttr.required, message: error.message}]
     });
 
-    return <FormItem {...formItemLayout} {...formItemAttr}>
+    const fieldFormItemLayout = form.config[field].formItemLayout;
+    const _formItemLayout = fieldFormItemLayout || formItemLayout;
+
+    return <FormItem {..._formItemLayout} {...formItemAttr}>
       {fieldProps(<Input {...fieldAttr} onChange={onChange} />)}
     </FormItem>;
   }
