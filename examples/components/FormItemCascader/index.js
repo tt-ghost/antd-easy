@@ -1,7 +1,7 @@
 import React from 'react';
 import Demo01 from './Demo01/Container.js';
 
-class FormItemSelectDemo extends React.Component {
+class FormItemCascaderDemo extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -13,5 +13,5 @@ class FormItemSelectDemo extends React.Component {
   }
 }
 
-export default FormItemSelectDemo;
+export default FormItemCascaderDemo;
 

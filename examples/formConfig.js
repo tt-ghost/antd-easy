@@ -143,5 +143,23 @@ export default {
     error: {
       message: '请输入正确的备注'
     }
+  },
+  local: {
+    type: 'Cascader',
+    formItemAttr: {
+      label: '地区',
+      required: true
+    },
+    fieldAttr: {
+      placeholder: '请选择地区',
+      allowClear: false,
+      showSearch: true,
+      size: 'large',
+      style: {width: '100%'},
+      notFoundContent: '没有找到'
+    },
+    error: {
+      message: '请选择正确的地区'
+    }
   }
 };

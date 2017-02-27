@@ -38,6 +38,7 @@ class Navigator extends React.Component {
       <MenuItem key='FuzzySearch'>FuzzySearch 模糊搜索</MenuItem>
       <MenuItem key='FormItemRadioGroup'>FormItemRadioGroup 单选</MenuItem>
       <MenuItem key='FormItemCheckboxGroup'>FormItemCheckboxGroup 复选</MenuItem>
+      <MenuItem key='FormItemCascader'>FormItemCascader 级联</MenuItem>
   </Menu>;
   }
 }
