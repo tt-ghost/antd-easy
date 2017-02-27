@@ -4,7 +4,7 @@ import { Form, Radio } from 'antd';
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 
-class FormItemRadio extends React.Component {
+class FormItemRadioGroup extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -34,8 +34,8 @@ class FormItemRadio extends React.Component {
   }
 }
 
-FormItemRadio.contextTypes = {
+FormItemRadioGroup.contextTypes = {
   form: React.PropTypes.object.isRequired
 };
 
-export default FormItemRadio;
+export default FormItemRadioGroup;

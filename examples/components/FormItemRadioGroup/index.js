@@ -1,7 +1,7 @@
 import React from 'react';
 import Demo01 from './Demo01/Container.js';
 
-class FormItemRadioDemo extends React.Component {
+class FormItemRadioGroupDemo extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -13,5 +13,5 @@ class FormItemRadioDemo extends React.Component {
   }
 }
 
-export default FormItemRadioDemo;
+export default FormItemRadioGroupDemo;
 

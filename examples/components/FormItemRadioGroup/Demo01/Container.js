@@ -9,7 +9,7 @@ class Container extends React.Component {
 
   render(){
     return <div>
-      <HTML codepath='FormItemRadio/Demo01/index.js' mdpath='FormItemRadio/Demo01/README.md' >
+      <HTML codepath='FormItemRadioGroup/Demo01/index.js' mdpath='FormItemRadioGroup/Demo01/README.md' >
         <Demo01 />
       </HTML>
     </div>;

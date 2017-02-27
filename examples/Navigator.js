@@ -36,7 +36,7 @@ class Navigator extends React.Component {
       <MenuItem key='FormItemInput'>FormItemInput 输入框</MenuItem>
       <MenuItem key='FormItemSelect'>FormItemSelect 下拉框</MenuItem>
       <MenuItem key='FuzzySearch'>FuzzySearch 模糊搜索</MenuItem>
-      <MenuItem key='FormItemRadio'>FormItemRadio 单选</MenuItem>
+      <MenuItem key='FormItemRadioGroup'>FormItemRadioGroup 单选</MenuItem>
       <MenuItem key='FormItemCheckboxGroup'>FormItemCheckboxGroup 复选</MenuItem>
   </Menu>;
   }

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Form, Button } from 'antd';
-import FormItemRadio from 'antd-easy/FormItemRadio';
+import FormItemRadioGroup from 'antd-easy/FormItemRadioGroup';
 import FormItemNoLabel from 'antd-easy/FormItemNoLabel';
 import formConfig from '../../../formConfig';
 
 const createForm = Form.create;
 
-class FormItemRadioDemo extends React.Component {
+class FormItemRadioGroupDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,7 +35,7 @@ class FormItemRadioDemo extends React.Component {
       {label: '保密', value: 'secret'}
     ];
     return <Form horizontal>
-      <FormItemRadio field='sex' options={options} />
+      <FormItemRadioGroup field='sex' options={options} />
       <FormItemNoLabel>
         <Button type='primary' loading={this.state.loading} onClick={this.onSubmit.bind(this)}>提交</Button>
       </FormItemNoLabel>
@@ -43,9 +43,9 @@ class FormItemRadioDemo extends React.Component {
   }
 }
 
-FormItemRadioDemo.childContextTypes = {
+FormItemRadioGroupDemo.childContextTypes = {
   form: React.PropTypes.object.isRequired
 };
 
-export default createForm()(FormItemRadioDemo);
+export default createForm()(FormItemRadioGroupDemo);
 
