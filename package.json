@@ -1,6 +1,6 @@
 {
   "name": "antd-easy",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "基于antd进行再次封装，更容易调用，使表单提示及校验更容易，底层为react",
   "main": "./lib/index.js",
   "scripts": {
