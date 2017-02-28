@@ -31,8 +31,8 @@ class FormItemSelect extends React.Component {
         {options.map((item, k) => {
           const value = item[keyField] !== undefined ? item[keyField]+'' : item;
           const text = item[valueField] !== undefined ? item[valueField] : item;
-          const option = typeof render === 'function' ? render(item) : text;
-          
+          const option = typeof render === 'function' ? render(item, k) : text;
+
           return <Option key={k} value={value}>{option}</Option>;
         })}
       </Select>)}

@@ -63,7 +63,7 @@ class FuzzySearch extends React.Component {
     const { form } = this.context;
     const { field, render } = this.props;
     const { formItemLayout } = form.config;
-    const { formItemAttr, fieldAttr, error, optionKey } = form.config[field];
+    const { formItemAttr, fieldAttr, error, keyField, valueField } = form.config[field];
     const { getFieldDecorator } = form;
     const fieldProps = getFieldDecorator(field, {
       rules: [{required: formItemAttr.required, message: error.message}]
@@ -75,10 +75,11 @@ class FuzzySearch extends React.Component {
     return <FormItem {..._formItemLayout} {...formItemAttr}>
       {fieldProps(<Select {...fieldAttr} onSearch={this.onSearch.bind(this)} onChange={this.onChange.bind(this)}>
         {options.map((item, k) => {
-          const valueStr = (item[optionKey]+'').toLowerCase();
-          return <Option key={valueStr} value={valueStr}>
-            {typeof render === 'function' ? render(item, k) : valueStr}
-          </Option>;
+          const value = item[keyField] !== undefined ? item[keyField]+'' : item;
+          const text = item[valueField] !== undefined ? item[valueField] : item;
+          const option = typeof render === 'function' ? render(item, k) : text;
+
+          return <Option key={k} value={value}>{option}</Option>;
         })}
       </Select>)}
     </FormItem>;

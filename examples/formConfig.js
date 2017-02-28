@@ -62,7 +62,7 @@ export default {
       size: 'large',
       style: {width: '100%'}
     },
-    optionKey: 'name',
+    keyField: 'name',
     fuzzySearch: (keyword, callback) => {
       Fetch(URL.search_user + '?keyword=' + keyword)
       .then(res => res.json())
