@@ -1,8 +1,34 @@
 
-## antd-easy
+# antd-easy
 
 > 基于antd库进行再次封装，使用更便捷，使表单错误提示及校验更友好
 
+## 作为第三方库使用
+
+### 基于 `antd@2.7.*` 版本
+
+### 安装
+
+```shell
+npm i antd-easy --save
+```
+
+### 通过 `import` 方式引入
+
+```javascript
+import FormItemInput from 'antd-easy/FormItemInput';
+import FormItemSelect from 'antd-easy/FormItemSelect';
+...
+```
+
+或者
+
+```javascript
+import { FormItemInput, FormItemSelect } from 'antd-easy';
+...
+```
+
+## 本地查看demo演示
 
 ### 准备，clone 并安装依赖
 
