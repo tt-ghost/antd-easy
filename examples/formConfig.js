@@ -40,6 +40,8 @@ export default {
     fieldAttr: {
       placeholder: '请选择地区'
     },
+    keyField: 'value',
+    valueField: 'label',
     error: {
       message: '请选择地区'
     }

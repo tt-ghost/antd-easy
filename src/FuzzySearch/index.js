@@ -3,7 +3,7 @@ import { Form, Select } from 'antd';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
-let userTimer;
+let timer;
 
 class FuzzySearch extends React.Component {
   constructor(props) {
@@ -35,11 +35,11 @@ class FuzzySearch extends React.Component {
 
   onSearch(keyword){
     if(keyword){
-      if (userTimer) {
-        clearTimeout(userTimer);
-        userTimer = null;
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
       }
-      userTimer = setTimeout(() => {
+      timer = setTimeout(() => {
         this.onFuzzySearch(keyword.toLowerCase());
       }, 100);
     }
@@ -64,19 +64,21 @@ class FuzzySearch extends React.Component {
     const { field, render } = this.props;
     const { formItemLayout } = form.config;
     const { formItemAttr, fieldAttr, error, optionKey } = form.config[field];
-    const fieldFormItemLayout = form.config[field].formItemLayout;
     const { getFieldDecorator } = form;
     const fieldProps = getFieldDecorator(field, {
       rules: [{required: formItemAttr.required, message: error.message}]
     });
+    const fieldFormItemLayout = form.config[field].formItemLayout;
     const _formItemLayout = fieldFormItemLayout || formItemLayout;
-    const options = this.state.options||[];
+    const { options = [] } = this.state;
     
     return <FormItem {..._formItemLayout} {...formItemAttr}>
       {fieldProps(<Select {...fieldAttr} onSearch={this.onSearch.bind(this)} onChange={this.onChange.bind(this)}>
-        {(options||[]).map((item, k) => {
+        {options.map((item, k) => {
           const valueStr = (item[optionKey]+'').toLowerCase();
-          return <Option key={valueStr} value={valueStr}>{render(item, k)}</Option>;
+          return <Option key={valueStr} value={valueStr}>
+            {typeof render === 'function' ? render(item, k) : valueStr}
+          </Option>;
         })}
       </Select>)}
     </FormItem>;

@@ -29,7 +29,7 @@ class FormItemSelectDemo extends React.Component {
   render(){
 
     this.props.form.config  = formConfig;
-    const options = [{text: '北京', value: 'beijing'}, {text: '上海', value: 'shanghai'}];
+    const options = [{label: '北京', value: 'beijing'}, {label: '上海', value: 'shanghai'}];
 
     return <Form horizontal>
       <FormItemSelect field='location' options={options} />

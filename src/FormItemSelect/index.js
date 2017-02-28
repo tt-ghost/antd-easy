@@ -11,23 +11,29 @@ class FormItemSelect extends React.Component {
   render(){
 
     const { form } = this.context;
-    const { field, onChange } = this.props;
+    const { field, onChange, render } = this.props;
     const { formItemLayout } = form.config;
-    const { formItemAttr, fieldAttr, error } = form.config[field];
+    const { formItemAttr={}, fieldAttr={}, error={}, keyField, valueField } = form.config[field];
     const { getFieldDecorator } = form;
     const fieldProps = getFieldDecorator(field, {
       rules: [{required: formItemAttr.required, message: error.message}]
     });
 
-    // 相关options 必须为对象组成的数组，如 [{text: '北京', value: 'beijing'}];
+    const fieldFormItemLayout = form.config[field].formItemLayout;
+    const _formItemLayout = fieldFormItemLayout || formItemLayout;
+    // 相关options 必须为对象组成的数组，如 [{label: '北京', value: 'beijing'}];
     const propsOptions = this.props.options;
-    const configOptions = form.config[field].options;
-    const options = Array.isArray(propsOptions) ? propsOptions : (configOptions||[]);
+    const configOptions = form.config[field].options||[];
+    const options = Array.isArray(propsOptions) ? propsOptions : configOptions;
     
-    return <FormItem {...formItemLayout} {...formItemAttr}>
+    return <FormItem {..._formItemLayout} {...formItemAttr}>
       {fieldProps(<Select {...fieldAttr} onChange={onChange}>
-        {options.map((option, k) => {
-          return <Option key={k} value={option.value}>{option.text}</Option>;
+        {options.map((item, k) => {
+          const value = item[keyField] !== undefined ? item[keyField]+'' : item;
+          const text = item[valueField] !== undefined ? item[valueField] : item;
+          const option = typeof render === 'function' ? render(item) : text;
+          
+          return <Option key={k} value={value}>{option}</Option>;
         })}
       </Select>)}
     </FormItem>;

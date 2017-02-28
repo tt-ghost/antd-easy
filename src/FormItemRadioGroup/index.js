@@ -19,12 +19,14 @@ class FormItemRadioGroup extends React.Component {
       rules: [{required: formItemAttr.required, message: error.message}]
     });
 
+    const fieldFormItemLayout = form.config[field].formItemLayout;
+    const _formItemLayout = fieldFormItemLayout || formItemLayout;
     // 相关options 必须为对象组成的数组，如 [{label: '北京', value: 'beijing'}];
     const propsOptions = this.props.options;
     const configOptions = form.config[field].options;
     const options = Array.isArray(propsOptions) ? propsOptions : (configOptions||[]);
 
-    return <FormItem {...formItemLayout} {...formItemAttr}>
+    return <FormItem {..._formItemLayout} {...formItemAttr}>
       {fieldProps(<RadioGroup {...fieldAttr} onChange={onChange}>
         {options.map((option, k) => {
           return <Radio key={k} value={option.value}>{option.label}</Radio>;
