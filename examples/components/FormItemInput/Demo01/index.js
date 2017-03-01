@@ -1,7 +1,5 @@
 import React from 'react';
-import { Form, Button } from 'antd';
-import FormItemInput from 'antd-easy/FormItemInput';
-import FormItemNoLabel from 'antd-easy/FormItemNoLabel';
+import { Button, Form, FormItemInput, FormItemNoLabel } from 'antd-easy';
 import formConfig from '../../../formConfig';
 
 const createForm = Form.create;
