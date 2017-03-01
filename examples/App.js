@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Navigator from './Navigator.js';
-import Layout from 'antd/lib/layout';
+import { Layout } from 'antd-easy';
 
 const { Header, Content, Footer, Sider } = Layout;
 

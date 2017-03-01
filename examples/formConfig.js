@@ -1,5 +1,5 @@
 
-import { filterOptionByChildren } from '../lib/utils';
+import { filterOptionByChildren } from '../lib/util';
 import { URL } from './config';
 import Fetch from './fetch';
 

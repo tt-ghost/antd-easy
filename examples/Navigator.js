@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from 'antd/lib/menu';
+import { Menu } from 'antd-easy';
 
 const MenuItem = Menu.Item;
 

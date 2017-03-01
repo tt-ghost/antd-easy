@@ -1,7 +1,5 @@
 import React from 'react';
-import { Form, Button } from 'antd';
-import FuzzySearch from 'antd-easy/FuzzySearch';
-import FormItemNoLabel from 'antd-easy/FormItemNoLabel';
+import { Form, Button, FuzzySearch, FormItemNoLabel } from 'antd-easy';
 import formConfig from '../../../formConfig';
 
 const createForm = Form.create;
