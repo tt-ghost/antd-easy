@@ -16,15 +16,15 @@ npm i antd-easy --save
 ### 通过 `import` 方式引入
 
 ```javascript
-import FormItemInput from 'antd-easy/FormItemInput';
-import FormItemSelect from 'antd-easy/FormItemSelect';
+import FormItemInput from 'antd-easy/lib/FormItemInput';
+import FormItemSelect from 'antd-easy/lib/FormItemSelect';
 ...
 ```
 
 或者
 
 ```javascript
-import { FormItemInput, FormItemSelect } from 'antd-easy';
+import { Input, Select, FormItemInput, FormItemSelect } from 'antd-easy';
 ...
 ```
 
