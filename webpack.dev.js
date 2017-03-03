@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    index: './examples/Entry.js',
+    index: './examples/Entry/index.js',
     dev: 'webpack-dev-server/client?http://localhost:9100'
   },
   output: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Demo01 from './index.js';
-import HTML from '../../../HTML';
+import Html from '../../../Html';
 
 class Container extends React.Component {
   constructor(props) {
@@ -9,9 +9,9 @@ class Container extends React.Component {
 
   render(){
     return <div>
-      <HTML codepath='FormItemRadioGroup/Demo01/index.js' mdpath='FormItemRadioGroup/Demo01/README.md' >
+      <Html codepath='FormItemRadioGroup/Demo01/index.js' mdpath='FormItemRadioGroup/Demo01/README.md' >
         <Demo01 />
-      </HTML>
+      </Html>
     </div>;
   }
 }

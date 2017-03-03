@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button, FormItemRadioGroup, FormItemNoLabel } from 'antd-easy';
-import formConfig from '../../../formConfig';
+import config from '../../../config';
 
 const createForm = Form.create;
 
@@ -26,7 +26,7 @@ class FormItemRadioGroupDemo extends React.Component {
 
   render(){
 
-    this.props.form.config  = formConfig;
+    this.props.form.config  = config;
     const options = [
       {label: '男', value: 'male'},
       {label: '女', value: 'female'},

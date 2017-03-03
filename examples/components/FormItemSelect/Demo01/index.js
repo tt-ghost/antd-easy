@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button, FormItemSelect, FormItemNoLabel } from 'antd-easy';
-import formConfig from '../../../formConfig';
+import config from '../../../config';
 
 const createForm = Form.create;
 
@@ -26,7 +26,7 @@ class FormItemSelectDemo extends React.Component {
 
   render(){
 
-    this.props.form.config  = formConfig;
+    this.props.form.config  = config;
     const options = [{label: '北京', value: 'beijing'}, {label: '上海', value: 'shanghai'}];
 
     return <Form horizontal>

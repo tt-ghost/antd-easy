@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button, FormItemCascader, FormItemNoLabel } from 'antd-easy';
-import formConfig from '../../../formConfig';
+import config from '../../../config';
 
 const createForm = Form.create;
 
@@ -42,7 +42,7 @@ class FormItemCascaderDemo extends React.Component {
       {label: '上海', value: 'shanghai'}
     ];
 
-    this.props.form.config  = formConfig;
+    this.props.form.config  = config;
 
     return <Form horizontal>
       <FormItemCascader field='local' options={options} />

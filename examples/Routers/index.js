@@ -1,13 +1,13 @@
 import React from 'react';
 import { Router, IndexRoute, Route, browserHistory } from 'react-router';
-import App from './App.js';
-import Default from './Default.js';
-import FormItemInput from './components/FormItemInput';
-import FormItemSelect from './components/FormItemSelect';
-import FuzzySearch from './components/FuzzySearch';
-import FormItemRadioGroup from './components/FormItemRadioGroup';
-import FormItemCheckboxGroup from './components/FormItemCheckboxGroup';
-import FormItemCascader from './components/FormItemCascader';
+import App from '../App';
+import Default from '../Default';
+import FormItemInput from '../components/FormItemInput';
+import FormItemSelect from '../components/FormItemSelect';
+import FuzzySearch from '../components/FuzzySearch';
+import FormItemRadioGroup from '../components/FormItemRadioGroup';
+import FormItemCheckboxGroup from '../components/FormItemCheckboxGroup';
+import FormItemCascader from '../components/FormItemCascader';
 
 class Routers extends React.Component {
   render(){

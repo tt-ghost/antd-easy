@@ -3,8 +3,8 @@ import ReactMarkdown from 'react-markdown';
 import marked from 'marked';
 import highlight from 'highlight.js';
 import { Collapse } from 'antd-easy';
-import fetch from './fetch';
-import { baseURL } from './config';
+import fetch from '../fetch';
+import { baseURL } from '../constants';
 import 'highlight.js/styles/color-brewer.css';
 
 const Panel = Collapse.Panel;

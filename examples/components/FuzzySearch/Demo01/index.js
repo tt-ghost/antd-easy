@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button, FuzzySearch, FormItemNoLabel } from 'antd-easy';
-import formConfig from '../../../formConfig';
+import config from '../../../config';
 
 const createForm = Form.create;
 
@@ -26,7 +26,7 @@ class FuzzySearchDemo extends React.Component {
 
   render(){
 
-    this.props.form.config  = formConfig;
+    this.props.form.config  = config;
     
     return <Form horizontal>
       <FuzzySearch field='user' render={(item) => {

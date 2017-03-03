@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button, FormItemCheckboxGroup, FormItemNoLabel, FormItemInput } from 'antd-easy';
-import formConfig from '../../../formConfig';
+import config from '../../../config';
 
 const createForm = Form.create;
 
@@ -51,7 +51,7 @@ class FormItemCheckboxGroupDemo extends React.Component {
     const { getFieldValue } = this.props.form;
     const needRemark = getFieldValue('needRemark');
 
-    this.props.form.config  = formConfig;
+    this.props.form.config  = config;
 
     return <Form horizontal>
       <FormItemCheckboxGroup field='color' options={options} />

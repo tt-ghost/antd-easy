@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form, FormItemInput, FormItemNoLabel } from 'antd-easy';
-import formConfig from '../../../formConfig';
+import config from '../../../config';
 
 const createForm = Form.create;
 
@@ -26,7 +26,7 @@ class FormItemInputDemo extends React.Component {
 
   render(){
 
-    this.props.form.config  = formConfig;
+    this.props.form.config  = config;
     return <Form horizontal>
       <FormItemInput field='name'/>
       <FormItemNoLabel>

@@ -1,5 +1,5 @@
 
-### formConfig配置
+### config配置
 
 ```javascript
 const formItemLayout = {
