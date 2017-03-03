@@ -95,7 +95,7 @@ export default {
     }
   },
   color: {
-    type: 'Checkbox',
+    type: 'CheckboxGroup',
     formItemAttr: {
       label: '颜色',
       required: true
