@@ -1,7 +1,7 @@
 {
   "name": "antd-easy",
   "version": "0.3.4",
-  "description": "基于antd进行再次封装，更容易调用，使表单提示及校验更容易，底层为react",
+  "description": "基于ant-design封装的业务组件，涉及表单校验、错误提示等复杂交互。技术底层为React.js",
   "main": "./lib/index.js",
   "scripts": {
     "start": "npm run dev",
