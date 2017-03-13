@@ -70,7 +70,7 @@ class Html extends React.Component {
     const _jsx = marked(jsx||'');
     const _config = marked(config||'');
 
-    return <div>
+    return <div className='demo-item-container'>
       {this.props.children}
       <Tabs defaultActiveKey="doc" onChange={this.onTabChange.bind(this)}>
         <TabPane tab="文档" key="doc">

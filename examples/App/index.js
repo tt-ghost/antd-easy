@@ -12,7 +12,7 @@ class App extends React.Component {
       <Header className='antd-easy-header'><Link to='/' >Antd-Easy</Link></Header>
       <Content style={{padding: '0 50px', marginTop:'30px'}}>
         <Layout style={{padding: '24px 0', background: '#fff'}}>
-          <Sider width={300} className='bg-white'>
+          <Sider width={250} className='bg-white'>
             <Navigator location={this.props.location}/>
           </Sider>
           <Content style={{padding: '0 24px', minHeight: 280}}>
