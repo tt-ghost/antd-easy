@@ -54,7 +54,7 @@ class Html extends React.Component {
     });
   }
 
-  callback(key) {
+  onTabChange(key) {
     const { codepath, configpath } = this.props;
     if(key === 'jsx' && codepath && !this.state.jsx){
       this.getFile(codepath, 'code', 'jsx');
@@ -72,14 +72,14 @@ class Html extends React.Component {
 
     return <div>
       {this.props.children}
-      <Tabs defaultActiveKey="doc" onChange={this.callback.bind(this)}>
+      <Tabs defaultActiveKey="doc" onChange={this.onTabChange.bind(this)}>
         <TabPane tab="文档" key="doc">
           <ReactMarkdown source={text} />
         </TabPane>
         <TabPane tab="组件源码" key="jsx">
           <div className='antd-easy-code-container' dangerouslySetInnerHTML={{__html: _jsx}} />
         </TabPane>
-        {configpath ? <TabPane tab="表单配置" key="config">
+        {configpath ? <TabPane tab="config.js" key="config">
           <div className='antd-easy-code-container' dangerouslySetInnerHTML={{__html: _config}} />
         </TabPane> : null }
       </Tabs>
