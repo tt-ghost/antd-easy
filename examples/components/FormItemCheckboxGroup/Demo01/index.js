@@ -2,14 +2,13 @@ import React from 'react';
 import Component from './component';
 import Html from '../../../Html';
 
+const basePath = 'FormItemCheckboxGroup/Demo01/';
+
 class Container extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render(){
     return <div>
-      <Html codepath='FormItemCheckboxGroup/Demo01/component.js' mdpath='FormItemCheckboxGroup/Demo01/README.md' >
+      <Html codepath={`${basePath}component.js`} mdpath={`${basePath}README.md`} configpath={`${basePath}config.js`} >
         <Component />
       </Html>
     </div>;

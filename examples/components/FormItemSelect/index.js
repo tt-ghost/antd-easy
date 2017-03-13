@@ -2,9 +2,6 @@ import React from 'react';
 import Demo01 from './Demo01';
 
 class FormItemSelectDemo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render(){
     return <div>

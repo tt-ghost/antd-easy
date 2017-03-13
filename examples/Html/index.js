@@ -2,14 +2,14 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import marked from 'marked';
 import highlight from 'highlight.js';
-import { Collapse } from 'antd-easy';
+import { Tabs } from 'antd-easy';
 import fetch from '../fetch';
 import { baseURL } from '../constants';
 import 'highlight.js/styles/color-brewer.css';
 
-const Panel = Collapse.Panel;
+const TabPane = Tabs.TabPane;
 
-class HTML extends React.Component {
+class Html extends React.Component {
   constructor(props) {
     super(props);
     marked.setOptions({
@@ -27,12 +27,20 @@ class HTML extends React.Component {
     });
     this.state = {
       text: '',
-      code: ''
+      jsx: '',
+      config: ''
     };
   }
 
-  getFile(filePath, type){
-    const language = this.props.language||'javascript';
+  componentDidMount() {
+    const { mdpath } = this.props;
+
+    // codepath && this.getFile(codepath, 'code');
+    mdpath && this.getFile(mdpath, 'markdown', 'text');
+  }
+
+  getFile(filePath, type, stateField){
+    const language = this.props.language||'js';
 
     return fetch(baseURL + `file?name=${filePath}`, {method: 'GET'})
     .then(res => {
@@ -40,34 +48,44 @@ class HTML extends React.Component {
     })
     .then(res => {
       const willChangeState = type === 'code' ? 
-        {code: '\n```'+language+'\n'+res+'```\n'} : {text: res};
+        {[stateField]: '\n```'+language+'\n'+res+'```\n'} : {[stateField]: res};
       this.setState(willChangeState);
       return res;
     });
   }
 
-  componentDidMount() {
-    const { codepath, mdpath } = this.props;
-
-    codepath && this.getFile(codepath, 'code');
-    mdpath && this.getFile(mdpath, 'markdown');
+  callback(key) {
+    const { codepath, configpath } = this.props;
+    if(key === 'jsx' && codepath && !this.state.jsx){
+      this.getFile(codepath, 'code', 'jsx');
+    }
+    if(key === 'config' && configpath && !this.state.config){
+      this.getFile(configpath, 'code', 'config');
+    }
   }
 
   render(){
-    const { code, text } = this.state;
-    const _code = marked(code||'');
+    const { jsx, text, config='暂无内容' } = this.state;
+    const { configpath } = this.props;
+    const _jsx = marked(jsx||'');
+    const _config = marked(config||'');
 
     return <div>
       {this.props.children}
-      <ReactMarkdown source={text} />
-      <Collapse bordered={false} defaultActiveKey={[]}>
-        <Panel header="Code" key="1">
-          <div className='antd-easy-code-container' dangerouslySetInnerHTML={{__html: _code}} />
-        </Panel>
-      </Collapse>
+      <Tabs defaultActiveKey="doc" onChange={this.callback.bind(this)}>
+        <TabPane tab="文档" key="doc">
+          <ReactMarkdown source={text} />
+        </TabPane>
+        <TabPane tab="组件源码" key="jsx">
+          <div className='antd-easy-code-container' dangerouslySetInnerHTML={{__html: _jsx}} />
+        </TabPane>
+        {configpath ? <TabPane tab="表单配置" key="config">
+          <div className='antd-easy-code-container' dangerouslySetInnerHTML={{__html: _config}} />
+        </TabPane> : null }
+      </Tabs>
     </div>;
   }
 }
 
-export default HTML;
+export default Html;
 

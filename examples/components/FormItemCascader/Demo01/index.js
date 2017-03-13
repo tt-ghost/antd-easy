@@ -2,14 +2,13 @@ import React from 'react';
 import Component from './component';
 import Html from '../../../Html';
 
-class Container extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const basePath = 'FormItemCascader/Demo01/';
 
+class Container extends React.Component {
+  
   render(){
     return <div>
-      <Html codepath='FormItemCascader/Demo01/component.js' mdpath='FormItemCascader/Demo01/README.md' >
+      <Html codepath={`${basePath}component.js`} mdpath={`${basePath}README.md`} configpath={`${basePath}config.js`} >
         <Component />
       </Html>
     </div>;
