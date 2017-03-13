@@ -7,11 +7,12 @@ const basePath = 'FormItemRadioGroup/Demo01/';
 class Container extends React.Component {
 
   render(){
-    return <div>
-      <Html codepath={`${basePath}component.js`} mdpath={`${basePath}README.md`} configpath={`${basePath}config.js`} >
-        <Component />
-      </Html>
-    </div>;
+    return <Html
+            codepath={`${basePath}component.js`}
+            mdpath={`${basePath}README.md`}
+            configpath={`${basePath}config.js`} >
+            <Component />
+          </Html>;
   }
 }
 
