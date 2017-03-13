@@ -1,44 +1,20 @@
 import React from 'react';
-import { Button, Form, FormItemInput, FormItemNoLabel } from 'antd-easy';
-import config from '../../../config';
+import Component from './component';
+import Html from '../../../Html';
 
-const createForm = Form.create;
-
-class FormItemInputDemo extends React.Component {
+class Container extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loading: false
-    };
-  }
-
-  getChildContext() {
-    return { form: this.props.form };
-  }
-
-  onSubmit(){
-    this.props.form.validateFieldsAndScroll({ force: true }, (errors, values) => {
-      if (errors) {return values;}
-      this.setState({loading: true});
-      setTimeout(() => {this.setState({loading: false});}, 2000);
-    });
   }
 
   render(){
-
-    this.props.form.config  = config;
-    return <Form horizontal>
-      <FormItemInput field='name'/>
-      <FormItemNoLabel>
-        <Button type='primary' loading={this.state.loading} onClick={this.onSubmit.bind(this)}>提交</Button>
-      </FormItemNoLabel>
-    </Form>;
+    return <div>
+      <Html codepath='FormItemInput/Demo01/component.js' mdpath='FormItemInput/Demo01/README.md' >
+        <Component />
+      </Html>
+    </div>;
   }
 }
 
-FormItemInputDemo.childContextTypes = {
-  form: React.PropTypes.object.isRequired
-};
-
-export default createForm()(FormItemInputDemo);
+export default Container;
 

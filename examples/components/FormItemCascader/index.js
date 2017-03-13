@@ -1,5 +1,5 @@
 import React from 'react';
-import Demo01 from './Demo01/Container.js';
+import Demo01 from './Demo01';
 
 class FormItemCascaderDemo extends React.Component {
   constructor(props) {

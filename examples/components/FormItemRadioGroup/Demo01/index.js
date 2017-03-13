@@ -1,49 +1,20 @@
 import React from 'react';
-import { Form, Button, FormItemRadioGroup, FormItemNoLabel } from 'antd-easy';
-import config from '../../../config';
+import Component from './component';
+import Html from '../../../Html';
 
-const createForm = Form.create;
-
-class FormItemRadioGroupDemo extends React.Component {
+class Container extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loading: false
-    };
-  }
-
-  getChildContext() {
-    return { form: this.props.form };
-  }
-
-  onSubmit(){
-    this.props.form.validateFieldsAndScroll({ force: true }, (errors, values) => {
-      if (errors) {return values;}
-      this.setState({loading: true});
-      setTimeout(() => {this.setState({loading: false});}, 2000);
-    });
   }
 
   render(){
-
-    this.props.form.config  = config;
-    const options = [
-      {label: '男', value: 'male'},
-      {label: '女', value: 'female'},
-      {label: '保密', value: 'secret'}
-    ];
-    return <Form horizontal>
-      <FormItemRadioGroup field='sex' options={options} />
-      <FormItemNoLabel>
-        <Button type='primary' loading={this.state.loading} onClick={this.onSubmit.bind(this)}>提交</Button>
-      </FormItemNoLabel>
-    </Form>;
+    return <div>
+      <Html codepath='FormItemRadioGroup/Demo01/component.js' mdpath='FormItemRadioGroup/Demo01/README.md' >
+        <Component />
+      </Html>
+    </div>;
   }
 }
 
-FormItemRadioGroupDemo.childContextTypes = {
-  form: React.PropTypes.object.isRequired
-};
-
-export default createForm()(FormItemRadioGroupDemo);
+export default Container;
 

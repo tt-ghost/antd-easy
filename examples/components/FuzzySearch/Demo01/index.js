@@ -1,47 +1,20 @@
 import React from 'react';
-import { Form, Button, FuzzySearch, FormItemNoLabel } from 'antd-easy';
-import config from '../../../config';
+import Component from './component';
+import Html from '../../../Html';
 
-const createForm = Form.create;
-
-class FuzzySearchDemo extends React.Component {
+class Container extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loading: false
-    };
-  }
-
-  getChildContext() {
-    return { form: this.props.form };
-  }
-
-  onSubmit(){
-    this.props.form.validateFieldsAndScroll({ force: true }, (errors, values) => {
-      if (errors) {return values;}
-      this.setState({loading: true});
-      setTimeout(() => {this.setState({loading: false});}, 2000);
-    });
   }
 
   render(){
-
-    this.props.form.config  = config;
-    
-    return <Form horizontal>
-      <FuzzySearch field='user' render={(item) => {
-        return `${item.en}(${item.name} ${item.location}人 今年 ${item.age} 岁)`;
-      }}/>
-      <FormItemNoLabel>
-        <Button type='primary' loading={this.state.loading} onClick={this.onSubmit.bind(this)}>提交</Button>
-      </FormItemNoLabel>
-    </Form>;
+    return <div>
+      <Html codepath='FuzzySearch/Demo01/component.js' mdpath='FuzzySearch/Demo01/README.md' >
+        <Component />
+      </Html>
+    </div>;
   }
 }
 
-FuzzySearchDemo.childContextTypes = {
-  form: React.PropTypes.object.isRequired
-};
-
-export default createForm()(FuzzySearchDemo);
+export default Container;
 
