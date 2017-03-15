@@ -1,6 +1,15 @@
 
 ## 版本信息
 
+### 0.4.0
+
+`2017-03-15`
+
+- 修改**form config**中`formLayout`改为`layout`
+- 删除**form config**中`formItemLayoutWithOutLabel`属性
+- 修复有些组件不能单独传`layout`属性bug等
+- 优化示例代码
+
 ### 0.3.4
 
 `2017-03-13`

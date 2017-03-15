@@ -1,6 +1,6 @@
 {
   "name": "antd-easy",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "基于ant-design封装的业务组件，涉及表单校验、错误提示等复杂交互。技术底层为React.js",
   "main": "./lib/index.js",
   "scripts": {
