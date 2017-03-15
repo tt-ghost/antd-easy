@@ -8,7 +8,7 @@ class FormItemCascader extends React.Component {
   render(){
     const { form } = this.context;
     const { field, options, onChange } = this.props;
-    const { formItemLayout } = form.config;
+    const { layout } = form.config;
     const { formItemAttr, fieldAttr, error } = form.config[field];
     const { getFieldDecorator } = form;
     const fieldProps = getFieldDecorator(field, {
@@ -18,10 +18,10 @@ class FormItemCascader extends React.Component {
     const fieldOptions = form.config[field].options;
     const _options = options ? options : fieldOptions;
 
-    const fieldFormItemLayout = form.config[field].formItemLayout;
-    const _formItemLayout = fieldFormItemLayout || formItemLayout;
+    const fieldLayout = form.config[field].layout;
+    const _layout = fieldLayout || layout;
 
-    return <FormItem {..._formItemLayout} {...formItemAttr}>
+    return <FormItem {..._layout} {...formItemAttr}>
       {fieldProps(<Cascader {...fieldAttr} options={_options} onChange={onChange} />)}
     </FormItem>;
   }

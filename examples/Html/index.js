@@ -5,22 +5,23 @@ import highlight from 'highlight.js';
 import { Tabs } from 'antd-easy';
 import fetch from '../fetch';
 import { baseURL } from '../constants';
-import 'highlight.js/styles/color-brewer.css';
+import 'highlight.js/styles/googlecode.css';
 
 const TabPane = Tabs.TabPane;
 
 class Html extends React.Component {
   constructor(props) {
     super(props);
+
     marked.setOptions({
       renderer: new marked.Renderer(),
       gfm: true,
       tables: true,
-      breaks: false,
-      pedantic: false,
+      breaks: true,
+      pedantic: true,
       sanitize: true,
       smartLists: true,
-      smartypants: false,
+      smartypants: true,
       highlight: function(code){
         return highlight.highlightAuto(code).value;
       }
@@ -76,7 +77,7 @@ class Html extends React.Component {
         <TabPane tab="文档" key="doc">
           <ReactMarkdown source={text} />
         </TabPane>
-        <TabPane tab="组件源码" key="jsx">
+        <TabPane tab="示例源码" key="jsx">
           <div className='antd-easy-code-container' dangerouslySetInnerHTML={{__html: _jsx}} />
         </TabPane>
         {configpath ? <TabPane tab="config.js" key="config">

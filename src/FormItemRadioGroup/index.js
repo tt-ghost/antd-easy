@@ -12,21 +12,21 @@ class FormItemRadioGroup extends React.Component {
 
     const { form } = this.context;
     const { field, onChange } = this.props;
-    const { formItemLayout } = form.config;
+    const { layout } = form.config;
     const { formItemAttr, fieldAttr, error } = form.config[field];
     const { getFieldDecorator } = form;
     const fieldProps = getFieldDecorator(field, {
       rules: [{required: formItemAttr.required, message: error.message}]
     });
 
-    const fieldFormItemLayout = form.config[field].formItemLayout;
-    const _formItemLayout = fieldFormItemLayout || formItemLayout;
+    const fieldLayout = form.config[field].layout;
+    const _layout = fieldLayout || layout;
     // 相关options 必须为对象组成的数组，如 [{label: '北京', value: 'beijing'}];
     const propsOptions = this.props.options;
     const configOptions = form.config[field].options;
     const options = Array.isArray(propsOptions) ? propsOptions : (configOptions||[]);
 
-    return <FormItem {..._formItemLayout} {...formItemAttr}>
+    return <FormItem {..._layout} {...formItemAttr}>
       {fieldProps(<RadioGroup {...fieldAttr} onChange={onChange}>
         {options.map((option, k) => {
           return <Radio key={k} value={option.value}>{option.label}</Radio>;

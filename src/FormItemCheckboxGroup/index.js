@@ -12,7 +12,7 @@ class FormItemCheckboxGroup extends React.Component {
 
     const { form } = this.context;
     const { field, onChange } = this.props;
-    const { formItemLayout } = form.config;
+    const { layout } = form.config;
     const { formItemAttr, fieldAttr, error } = form.config[field];
     const { getFieldDecorator } = form;
     const fieldProps = getFieldDecorator(field, {
@@ -24,7 +24,10 @@ class FormItemCheckboxGroup extends React.Component {
     const configOptions = form.config[field].options;
     const options = Array.isArray(propsOptions) ? propsOptions : (configOptions||[]);
 
-    return <FormItem {...formItemLayout} {...formItemAttr}>
+    const fieldLayout = form.config[field].layout;
+    const _layout = fieldLayout || layout;
+
+    return <FormItem {..._layout} {...formItemAttr}>
       {fieldProps(<CheckboxGroup {...fieldAttr} options={options} onChange={onChange} />)}
     </FormItem>;
   }

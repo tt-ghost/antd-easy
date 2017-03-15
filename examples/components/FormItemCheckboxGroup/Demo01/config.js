@@ -1,18 +1,11 @@
 
-const formItemLayout = {
+const layout = {
   labelCol: { span: 4 },
   wrapperCol: { span: 16 }
 };
-const formItemLayoutColumn = {
-  wrapperCol: { span: 24 }
-};
-const formItemLayoutWithOutLabel = {
-  wrapperCol: { span: 16, offset: 4 }
-};
 
 export default {
-  formItemLayout,
-  formItemLayoutWithOutLabel,
+  layout,
   color: {
     type: 'CheckboxGroup',
     formItemAttr: {
@@ -60,7 +53,6 @@ export default {
       placeholder: '请填写备注',
       type: 'textarea'
     },
-    formItemLayout:formItemLayoutColumn,
     error: {
       message: '请输入正确的备注'
     }

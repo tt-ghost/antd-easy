@@ -11,9 +11,9 @@ class FormItemNoLabel extends React.Component {
   render(){
     
     const { form } = this.context;
-    const { formItemLayoutWithOutLabel } = form.config;
+    const { layout } = form.config;
 
-    return <FormItem {...formItemLayoutWithOutLabel}>
+    return <FormItem label=' ' colon={false} {...layout}>
       {this.props.children}
     </FormItem>;
   }

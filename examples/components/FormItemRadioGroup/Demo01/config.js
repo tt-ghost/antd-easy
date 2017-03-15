@@ -1,15 +1,11 @@
 
-const formItemLayout = {
+const layout = {
   labelCol: { span: 4 },
   wrapperCol: { span: 16 }
 };
-const formItemLayoutWithOutLabel = {
-  wrapperCol: { span: 16, offset: 4 }
-};
 
 export default {
-  formItemLayout,
-  formItemLayoutWithOutLabel,
+  layout,
   sex: {
     type: 'RadioGroup',
     formItemAttr: {

@@ -3,18 +3,13 @@ import { util } from 'antd-easy';
 import { URL } from '../../../constants';
 import Fetch from '../../../fetch';
 
-const formItemLayout = {
+const layout = {
   labelCol: { span: 4 },
   wrapperCol: { span: 16 }
 };
 
-const formItemLayoutWithOutLabel = {
-  wrapperCol: { span: 16, offset: 4 }
-};
-
 export default {
-  formItemLayout,
-  formItemLayoutWithOutLabel,
+  layout,
   user: {
     type: 'FuzzySearch',
     formItemAttr: {
@@ -46,7 +41,7 @@ export default {
         callback(res);
       });
     },
-    // formItemLayout: {},
+    // layout: {},
     error: {
       message: '请输入用户'
     }
